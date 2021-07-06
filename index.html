@@ -18,6 +18,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/Draggable.min.js"
 ></script>
 
 
+
 <style type = "text/css"> 
 * {
   box-sizing: border-box;
@@ -53,21 +54,21 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80%;
+  height: 75%;
   max-height:500px;
-  width: 350px;
+  width: 270px;
   margin-top:0;
 }
 
 .art{
   position:absolute;
-  height:80%;
+  height:70%;
   max-height:400px;
 }
 
 figcaption{
   position:relative;
-  margin-top:90%;
+  margin-top:105%;
   margin-left:0;
   color: darkblue;
   font-weight:900;
@@ -235,8 +236,8 @@ nav a:hover{
 <script>
     gsap.registerPlugin(Draggable);
 
-var slideDelay = 0;
-var slideDuration = 30;
+var slideDelay = 10;
+var slideDuration = 50;
 var snapX;
 
 var slides = document.querySelectorAll(".slide");
@@ -256,9 +257,9 @@ var timer = gsap.delayedCall(slideDelay, autoPlay);
 
 var animation = gsap.to(slides, {
   xPercent: "+=" + (numSlides * 100),
-  duration: 300,
+  duration: 30,
   ease: "none",
-  paused: true,
+  paused: false,
   repeat: -1,
   modifiers: {
     xPercent: wrap
@@ -298,7 +299,7 @@ function updateDraggable() {
 }
 
 function animateSlides(direction) {
-    
+   
   timer.restart(true);
   slideAnimation.kill();
   
@@ -315,7 +316,7 @@ function autoPlay() {
   if (draggable.isPressed || draggable.isDragging || draggable.isThrowing) {
     timer.restart(true);
   } else {
-    animateSlides(-1);
+    
   }
 }
 
