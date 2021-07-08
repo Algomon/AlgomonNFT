@@ -16,7 +16,26 @@ src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"
 <script
 src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/Draggable.min.js"
 ></script>
+ 
+<script type="module">
 
+import MyAlgo from '../node_modules/@randlabs/myalgo-connect';
+
+const myAlgoWallet = new MyAlgo();
+
+/*Warning: Browser will block pop-up if user doesn't trigger myAlgoWallet.connect() with a button interation */
+const connectToMyAlgo = async() => {
+  try {
+    const accounts = await myAlgoWallet.connect();
+
+    const addresses = accounts.map(account => account.address);
+    
+  } catch (err) {
+    console.error(err);
+  }
+}
+  
+</script>
 
 <link rel="stylesheet" href="stylesheet.css">
 
@@ -214,8 +233,6 @@ var slideDuration = 50;
 var snapX;
 
 var slides = document.querySelectorAll(".slide");
-var prevButton = document.querySelector("#prevButton");
-var nextButton = document.querySelector("#nextButton");
 var progressWrap = gsap.utils.wrap(0, 1);
 
 var numSlides = slides.length;
@@ -257,13 +274,6 @@ var draggable = new Draggable(proxy, {
 
 window.addEventListener("resize", resize);
 
-prevButton.addEventListener("click", function() {
-  animateSlides(1);
-});
-
-nextButton.addEventListener("click", function() {
-  animateSlides(-1);
-});
 
 function updateDraggable() {
   timer.restart(true);
