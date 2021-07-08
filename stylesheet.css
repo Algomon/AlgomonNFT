@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
+  --primary: #09689E;
 }
+
+
 
 
 main {
@@ -139,5 +142,19 @@ nav a:hover{
 
 .list > il{
    font-weight:500;
-   font-size: 18px;
+   font-size: 20px;
+   
 }
+
+common {
+    color:darkgreen
+}
+rare {
+    color: rgb(255, 136, 0);
+}
+unique {
+    color: darkblue;
+}
+
+th{font-size:larger;background-color: var(--primary);color:white}
+td{font-size:larger;padding:5px;}
