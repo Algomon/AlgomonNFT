@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+  --primary: #09689E;
+}
+
+
+.container {
+    display: relative;
+    position: relative;
+    height: 300px;
+    width: 250px;
+    background-color:white;
+    
+    background-size:contain;
+    border-radius: 20px;
+    border-width: 2px;
+    overflow: hidden;
+    border-style: solid;
+    border-color: #09689E;
+    animation: shadow 3s linear infinite;
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 5px #7181dd;
+    }
+    50% {
+        box-shadow: 0 0 20px rgb(151, 163, 231);
+        border-color: rgb(253, 244, 232);
+    }
+    100% {
+        box-shadow: 0 0 5px #7181dd;
+    }
+}
+
+@keyframes social {
+    0% {
+        filter: drop-shadow(0px 0px 3px #7181dd);
+    }
+    50% {
+        filter: drop-shadow(0px 0px 13px #09689E);
+    }
+    100% {
+        filter: drop-shadow(0px 0px 3px #7181dd);
+    }
+}
+
+@keyframes line {
+    0% {
+        background: #7181dd;
+    }
+    50% {
+        background: #09689E;
+    }
+    100% {
+        background: #7181dd;
+    }
+}
+
+.about:hover {
+    transform: scale(2.0);
+    border-radius: 0%;
+}
+
+.about:hover>.fas.fa-info-circle {
+    display: none;
+}
+
+.about {
+    display: relative;
+    position: relative;
+    top: 66%;
+    left: 56%;
+    height: 200px;
+    width: 350px;
+    background: #ffffff;
+    border-top-left-radius: 56%;
+    border-style: dotted;
+    cursor: pointer;
+    border-color: #09689E;
+    box-shadow: 0 0 4px #09689E;
+    border-width: 2px;
+    transition-duration: 0.9s;
+    animation: shadow 5s linear infinite;
+}
+
+.preview {
+    position: absolute;
+    top: 80%;
+    left: -5px;
+    padding: 10px;
+    padding-top: 0px;
+    height: 377px;
+    width: 250px;
+    background: #ffff;
+    border-top-right-radius: 56%;
+    border-top-color: #09689E;
+    border-right-color: #09689E;
+    border-style: solid;
+    box-shadow: 0 0 4px #09689E;
+    background-color:#09689E;
+    animation: shadow 5s linear infinite;
+    display:flex;
+    flex-direction: column;
+}
+.row{display:flex;flex-direction:row;}
+
+.name {
+    position: relative;
+    top: 0px;
+    padding: 0px;
+    margin: 0px;
+    left: 40%;
+    font-family: 'Ubuntu', sans-serif;
+    transition-duration: 0.9s;
+    font-size: 20px;
+}
+
+.position {
+    position: relative;
+    top: -25px;
+    left: 22%;
+    font-family: 'Ubuntu', sans-serif;
+    transition-duration: 0.9s;
+}
+
+.line {
+    position: relative;
+    margin: 0px;
+    top: -17px;
+    bottom: 0px;
+    left: 20%;
+    height: 2px;
+    width: 179px;
+    background-color: #09689E;
+    transition-duration: 0.9s;
+    animation: line 1s linear infinite;
+}
+
+.details {
+    position: relative;
+    margin: 0px;
+    padding: 15px;
+    padding-top:30px;
+    top: 25%;
+}
+
+.details p {
+    font-family: 'Bebas Neue';
+    margin: 0px;
+    margin-right: 80px;
+    padding: 0px;
+}
+
+#about:hover>.details {
+    display: block;
+    transform: scale(0.5);
+    top: -60px;
+    left: -70px;
+}
+
+.social {
+    display: flex;
+}
+
+.social img {
+    margin-right: 17px;
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0px 0px 2px #0066ff);
+}
+
+.social img:hover {
+    animation: social 3s linear infinite;
+}
+
+card {position:relative;
+  display:inline-block;
+  margin-left:0;
+padding:1vw}
+
+p.rarity{margin:0px;
+  margin-top:3px;
+  font-family: 'Ubuntu';
+  font-size:28px;
+  letter-spacing:-2px;
+  font-weight:100;
+  color:gold;
+}
+p.minted{
+  position:absolute;
+  top:42px;
+  font-family: 'Ubuntu';
+  font-size:16px;
+  color:white;
+}
+
+.infoicon{
+  color: #0066ff;
+  font-size: 17px;
+  position: relative;
+  top: 40px;
+  left: 22%;
+}
+
+p.name{
+  text-shadow: 0.2px 0.5px 1px lightblue, 0 2px 5px white, 1px 2px 2px lightsteelblue;
+  left:0;
+  font-size:32px;
+  font-weight:bold;}
+  p.subheading{font-size: 18px;color: #0066ff;margin-top: -10px;}
+
+.entry{margin-top: 10px;margin-bottom: 10px;}
+.entry p{font-family: 'Roboto Condensed', sans-serif;padding-right:20px;font-size:13px;}

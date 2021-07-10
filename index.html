@@ -16,25 +16,14 @@ src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"
 <script
 src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/Draggable.min.js"
 ></script>
+<script
+src="node_modules/myalgo.min.js"
+></script>
  
-<script type="module">
 
-import MyAlgo from '../node_modules/@randlabs/myalgo-connect';
+<script src="node_modules/connect.js" type="module"></script>
 
-const myAlgoWallet = new MyAlgo();
 
-/*Warning: Browser will block pop-up if user doesn't trigger myAlgoWallet.connect() with a button interation */
-const connectToMyAlgo = async() => {
-  try {
-    const accounts = await myAlgoWallet.connect();
-
-    const addresses = accounts.map(account => account.address);
-    
-  } catch (err) {
-    console.error(err);
-  }
-}
-  
 </script>
 
 <link rel="stylesheet" href="stylesheet.css">
@@ -51,48 +40,59 @@ const connectToMyAlgo = async() => {
           <a href='#List'>NFT List</a>
           <a href="#About">About</a>
           <a href="#">Home</a>
+          
+          
         </nav>
       </div>
 
     <main>
-   
         <div class="slides-container">
           <div class="slides-inner" >
             
             <figure class="slide">
-            <img class="art" src="https://gateway.pinata.cloud/ipfs/QmbEPjzT2hfdBeGeh3uvQSgCZK6hRvZ7MpB61oMYsLpnZJ" >
+            <img class="art" src="/img/algomon1.gif" >
               <figcaption class="common">MON1ANT</figcaption>
             </figure>
             
             <figure class="slide">
-            <img class="art" src="https://gateway.pinata.cloud/ipfs/QmRurZHmYAKwzbaEU7dEs35DhenVS3xKm5kK6D7N6kKq4x">
+            <img class="art" src="/img/algomon2.gif">
             <figcaption class="common">MON2NAO</figcaption>
             </figure>
             
                 <figure class="slide">
-            <img class="art" src="https://gateway.pinata.cloud/ipfs/Qmaf7pUDxfTQERTWP9XU8QXS9CpQbMb3RdcXXeFZcnq9B8">
+            <img class="art" src="/img/algomon3.gif">
             <figcaption class="common">MON3PIP</figcaption>
             </figure>
 
             <figure class="slide">
-              <img class="art" src="https://gateway.pinata.cloud/ipfs/QmcSMLnAKPU7TJXZ4iWESjahGmdW96CuMtXr1bBn48ZvTs">
+              <img class="art" src="/img/algomon4.gif">
               <figcaption class="rare">MON4INT</figcaption>
               </figure>
                        
               <figure class="slide">
-                <img class="art" src="https://gateway.pinata.cloud/ipfs/QmQLgFccc96HxNiwPsthxPRG27zM4d2azB7iCHwLgKk4SY">
+                <img class="art" src="/img/algomon5.gif">
                 <figcaption class="rare">MON5LIE</figcaption>
                 </figure>
             
                 <figure class="slide">
-                  <img class="art" src="https://gateway.pinata.cloud/ipfs/QmZ7tzKGCHDDqNkaUyMPrvdaHyvrMuX6nja9Y7ePjACWp1">
+                  <img class="art" src="/img/algomon6.gif">
                   <figcaption class="common">MON6GUM</figcaption>
                   </figure>
 
              <figure class="slide">
-                    <img class="art" src="https://gateway.pinata.cloud/ipfs/QmcZHGY6em8Vcqk5vJdVtiv4CfmvCZTpb5yt3vbqhZ3XXJ">
+                    <img class="art" src="/img/algomon7.gif">
                     <figcaption class="rare">MON7PRO</figcaption>
                     </figure>
+
+                    <figure class="slide">
+                      <img class="art" src="/img/algomon8.gif">
+                      <figcaption class="common">MON8KAR</figcaption>
+                      </figure>
+
+                      <figure class="slide">
+                        <img class="art" src="/img/algomon9.gif">
+                        <figcaption class="rare">MON9ADH</figcaption>
+                        </figure>
           </div>
         </div>
     </main>
@@ -126,6 +126,7 @@ const connectToMyAlgo = async() => {
             <th>ASA Name</th>
             <th>ASA ID</th>
             <th>Rarity</th>
+            <th>Availability</th>
           </tr>
         </thead>
         <tbody>
@@ -134,48 +135,63 @@ const connectToMyAlgo = async() => {
             <td>MON1ANT</td>
             <td><a href="https://algoexplorer.io/asset/265555409">265555409</a></td>
             <td><common>1000 minted</common></td>
+            <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
           </tr>
           <tr>
             <td><b>2# Naos</b></td>
             <td>MON2NAO</td>
             <td><a href="https://algoexplorer.io/asset/265564701">265564701</a></td>
             <td><common>1000 minted</common></td>
-            
+            <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
           </tr>
           <tr>
             <td><b>3# Pipoltr</b></td>
             <td>MON3PIP</td>
             <td><a href="https://algoexplorer.io/asset/265573153">265573153</a></td>
             <td><common>1000 minted</common></td>
-          
+            <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
           </tr>
           <tr>
             <td><b>4# Intan</b></td>
             <td>MON4INT</td>
             <td><a href="https://algoexplorer.io/asset/266625413">266625413</a></td>
             <td><rare>500 minted</rare></td>
-          
+            <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
           </tr>
           <tr>
             <td><b>5# Liesma</b></td>
             <td>MON5LIE</td>
             <td><a href="https://algoexplorer.io/asset/266779424">266779424</a></td>
             <td><rare>500 minted</rare></td>
-        
+            <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
           </tr>
           <tr>
             <td><b>6# Gumala</b></td>
             <td>MON6GUM</td>
             <td><a href="https://algoexplorer.io/asset/267140826">267140826</a></td>
             <td><common>1000 minted</common></td>
-        
+            <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
           </tr>
           <tr>
             <td><b>7# Procyon</b></td>
             <td>MON7PRO</td>
             <td><a href="https://algoexplorer.io/asset/267364802">267364802</a></td>
             <td><rare>500 minted</rare></td>
-        
+            <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
+          </tr>
+          <tr>
+            <td><b>8# Karaka</b></td>
+            <td>MON8KAR</td>
+            <td><a href="https://algoexplorer.io/asset/269353009">269353009</a></td>
+            <td><common>1000 minted</common></td>
+            <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
+          </tr>
+          <tr>
+            <td><b>9# Adhafera</b></td>
+            <td>MON9ADH</td>
+            <td><a href="https://algoexplorer.io/asset/267364802">267364802</a></td>
+            <td><rare>500 minted</rare></td>
+            <td>Trade only</td>
           </tr>
         </tbody>
       </table>
@@ -190,12 +206,14 @@ const connectToMyAlgo = async() => {
                 <th>ASA Name</th>
                 <th>ASA ID</th>
                 <th>Rarity</th>
+                <th>Availability</th>
               </tr>
               <tr>
                 <td><b>0# MissalGo</b></td>
             <td>MON0MIS</td>
             <td><a href="https://algoexplorer.io/asset/265533459">265533459</a></td>
             <td><unique>1 minted</unique></td>
+            <td>Not for sale</td>
       </tr>
     </tbody>
   </table>
