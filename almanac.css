@@ -13,7 +13,7 @@
     height: 300px;
     width: 250px;
     background-color:white;
-    
+    opacity:.8;
     background-size:contain;
     border-radius: 20px;
     border-width: 2px;
@@ -21,7 +21,7 @@
     border-style: solid;
     border-color: #09689E;
     animation: shadow 3s linear infinite;
-}
+}.container:hover{opacity:1}
 
 @keyframes shadow {
     0% {
@@ -105,27 +105,11 @@
     animation: shadow 5s linear infinite;
     display:flex;
     flex-direction: column;
+
 }
 .row{display:flex;flex-direction:row;}
 
-.name {
-    position: relative;
-    top: 0px;
-    padding: 0px;
-    margin: 0px;
-    left: 40%;
-    font-family: 'Ubuntu', sans-serif;
-    transition-duration: 0.9s;
-    font-size: 20px;
-}
 
-.position {
-    position: relative;
-    top: -25px;
-    left: 22%;
-    font-family: 'Ubuntu', sans-serif;
-    transition-duration: 0.9s;
-}
 
 .line {
     position: relative;
@@ -144,8 +128,8 @@
     position: relative;
     margin: 0px;
     padding: 15px;
-    padding-top:30px;
-    top: 25%;
+    padding-top:1%;
+    top: 15%;
 }
 
 .details p {
@@ -162,21 +146,6 @@
     left: -70px;
 }
 
-.social {
-    display: flex;
-}
-
-.social img {
-    margin-right: 17px;
-    width: 30px;
-    height: 30px;
-    filter: drop-shadow(0px 0px 2px #0066ff);
-}
-
-.social img:hover {
-    animation: social 3s linear infinite;
-}
-
 card {position:relative;
   display:inline-block;
   margin-left:0;
@@ -188,7 +157,23 @@ p.rarity{margin:0px;
   font-size:28px;
   letter-spacing:-2px;
   font-weight:100;
+  
+}
+.common{
+  color:lightgreen;
+  filter: drop-shadow(0px 0px 1px darkgreen);
+}
+.rare{
   color:gold;
+  filter: drop-shadow(0px 0px 1px darkorange);
+}
+.unique{
+  color:rgb(255, 66, 55);
+  filter: drop-shadow(0px 0px 2px red);
+}
+.legendary{
+  color:rgb(255, 109, 255);
+  filter: drop-shadow(0px 0px 1px darkblue);
 }
 p.minted{
   position:absolute;
@@ -200,10 +185,10 @@ p.minted{
 
 .infoicon{
   color: #0066ff;
-  font-size: 17px;
+  font-size: 25px;
   position: relative;
-  top: 40px;
-  left: 22%;
+  top: 25%;
+  left: 18%;
 }
 
 p.name{
@@ -215,3 +200,19 @@ p.name{
 
 .entry{margin-top: 10px;margin-bottom: 10px;}
 .entry p{font-family: 'Roboto Condensed', sans-serif;padding-right:20px;font-size:13px;}
+
+#card1x::after{
+  content:"COMING SOON";
+  text-align:center;
+  position:absolute;
+  font-size:50px;
+  font-weight:900;
+  color:rgb(247, 0, 255);
+  transform:rotate(-10deg);
+  top:20%;
+  left:10%;
+  filter: drop-shadow(1px 1px 16px blue);
+}
+#card1x{opacity:.56;cursor:help}
+#card1x .about{opacity:0;cursor:help}
+#card1x:hover{opacity:1}
