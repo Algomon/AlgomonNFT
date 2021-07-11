@@ -14,9 +14,67 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 <script src="https://unpkg.com/algosdk@latest"></script>
 <script src="node_modules/myalgo.min.js"></script>
-<script src="node_modules/connect.js"></script>
-<script src="node_modules/lookup.js"></script>
+<!--<script src="node_modules/connect.js"></script>
+<script src="node_modules/lookup.js"></script>-->
 
+<script>
+
+  var userAddress = "";
+  var userAddressId = "";
+  
+  
+  function connectToWallet(){
+  
+  const myAlgoWallet = new MyAlgoConnect(); 
+  myAlgoWallet.connect().then((accounts) => {  
+  userAddress = accounts[0];  
+  userAddressId = accounts[0]["address"];
+  console.log(userAddress);
+  document.getElementById("login").innerText="Connected: "+userAddressId.substring(0,6)+"(...)"
+  
+  // Instantiate the indexer client wrapper
+  let indexerClient = new algosdk.Indexer(indexer_token, indexer_server, indexer_port);
+  
+  (async () => {
+      let acct = userAddress;
+      let accountInfo = await indexerClient.lookupAccountByID(acct).do();
+      console.log("Information for Account: " + JSON.stringify(accountInfo, undefined, 2));
+  })().catch(e => {
+      console.log(e);
+      console.trace();
+  });
+  }).catch((err) => {  
+  // User rejected  
+  });
+  
+  }
+  
+  function lookupAddress(userAddressId){
+
+const indexer_token = "";
+const indexer_server = "http://localhost";
+const indexer_port = 8080;
+
+// Instantiate the indexer client wrapper
+let indexerClient = new algosdk.Indexer(indexer_token, indexer_server, indexer_port);
+
+(async () => {
+    let acct = userAddressId;
+    let accountInfo = await indexerClient.lookupAccountByID(acct).do();
+    console.log("Information for Account: " + JSON.stringify(accountInfo, undefined, 2));
+})().catch(e => {
+    console.log(e);
+    console.trace();
+});
+}
+  
+  function setupAlmanac(){
+      for (var i=1;i<2;i++){
+         
+      }
+  }
+  
+  setupAlmanac();</script>
 
 <link rel="stylesheet" href="almanac.css">
 <link rel="stylesheet" href="stylesheet.css">
@@ -260,7 +318,7 @@
                 <p class="name">MissalGo</p>
                 <p class="subheading">The Kraken</p>
                 <div class="entry">
-                  <p><b>Name meaning: </b> "M̸͍̣͍̭͇͖̭͎͙̼̣̬͎̥̍̒̃́͛͑̈͑̓͘ͅi̷̠̝͍̳͐͌̉s̶̡̰̻͓͇̮̣̋s̴̨̠͈͉̩͕̹̪̪̋͊̈̍͊̓̈́ͅi̵̝̳̣͇̫̞̍̂̀̍́͒͗̊̄̓̚͝ḡ̷̹̗̆̔N̴̡̩̥͉̘̠͍̹͙̹̬̝͍͚̔̓̑̈́̾̒̾ŏ̷̧͈͙͓͍̞̻̳̝͗̆́̆̚͠"</p>
+                  <p><b>Name meaning: </b><span style="opacity:.5"> "M̸͍̣͍̭͇͖̭͎͙̼̣̬͎̥̍̒̃́͛͑̈͑̓͘ͅi̷̠̝͍̳͐͌̉s̶̡̰̻͓͇̮̣̋s̴̨̠͈͉̩͕̹̪̪̋͊̈̍͊̓̈́ͅi̵̝̳̣͇̫̞̍̂̀̍́͒͗̊̄̓̚͝ḡ̷̹̗̆̔N̴̡̩̥͉̘̠͍̹͙̹̬̝͍͚̔̓̑̈́̾̒̾ŏ̷̧͈͙͓͍̞̻̳̝͗̆́̆̚͠"</span></p>
                  <p>The first algomon ever minted. It has superhuman intelligence and dangerous psychic powers. Bloodthirst, it often goes on killing sprees for its own entertainment.</p>
                 </div>
             </div>
