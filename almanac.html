@@ -19,24 +19,26 @@
 
 <script>
 
-  var userAddress = "";
   var userAddressId = "";
+  var algomonOwned = [];
+  var almanac = {265555409:"Antares",265564701:"Naos",265573153:"Pipoltr"}
   
   
   function connectToWallet(){
   
   const myAlgoWallet = new MyAlgoConnect(); 
-  myAlgoWallet.connect().then((accounts) => {  
-  userAddress = accounts[0];  
+  myAlgoWallet.connect().then((accounts) => {   
   userAddressId = accounts[0]["address"];
-  console.log(userAddress);
+  console.log(userAddressId);
   document.getElementById("login").innerText="Connected: "+userAddressId.substring(0,6)+"(...)"
+  lookupAddress(userAddressId);
   
   // Instantiate the indexer client wrapper
   let indexerClient = new algosdk.Indexer(indexer_token, indexer_server, indexer_port);
   
   (async () => {
-      let acct = userAddress;
+      let acct = userAddressId;
+      console.log("Retrieving info for account " + userAddressID + "...");
       let accountInfo = await indexerClient.lookupAccountByID(acct).do();
       console.log("Information for Account: " + JSON.stringify(accountInfo, undefined, 2));
   })().catch(e => {
@@ -49,32 +51,50 @@
   
   }
   
-  function lookupAddress(userAddressId){
+function lookupAddress(userAddressId){
+    var url = "https://algoexplorerapi.io/v2/accounts/"+userAddressId;
+    console.log(url)
+    var addressInfo = "";
 
-const indexer_token = "";
-const indexer_server = "http://localhost";
-const indexer_port = 8080;
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
 
-// Instantiate the indexer client wrapper
-let indexerClient = new algosdk.Indexer(indexer_token, indexer_server, indexer_port);
-
-(async () => {
-    let acct = userAddressId;
-    let accountInfo = await indexerClient.lookupAccountByID(acct).do();
-    console.log("Information for Account: " + JSON.stringify(accountInfo, undefined, 2));
-})().catch(e => {
-    console.log(e);
-    console.trace();
-});
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+     
+      addressInfo=JSON.parse(xhr.responseText);
+      var assets = addressInfo["assets"];
+      algomonOwned=[];
+      for (i in assets) {
+        if (assets[i]["creator"]=="C67GXS7YG5N32HFJ56TUCLDOUWEJGMB62GXTYBBHQE3V7TX2KPBSTI5CDA"
+        && assets[i]["amount"]>0) algomonOwned.push(assets[i])
+      }
+      console.log(algomonOwned);
+      setupAlmanac();
+   }};
+xhr.send();
 }
-  
-  function setupAlmanac(){
-      for (var i=1;i<2;i++){
-         
+ 
+
+function setupAlmanac(){
+    var textData = "";
+    if (algomonOwned.length==0){
+      textData = "I cannot find any algomon linked to this wallet :("
+    } 
+    else {
+    textData = "Algomon found! ";
+    for (i in algomonOwned){
+         var mon = algomonOwned[i];
+         var monName = almanac[mon["asset-id"]];
+         textData += monName +": x"+mon["amount"]+" "
+         document.getElementById(monName).style.background="url('img/"+monName+".gif')";
+         document.getElementById(monName).style.backgroundSize="contain";
       }
   }
+  document.getElementById("walletInfo").textContent=textData;
+}
   
-  setupAlmanac();</script>
+</script>
 
 <link rel="stylesheet" href="almanac.css">
 <link rel="stylesheet" href="stylesheet.css">
@@ -83,7 +103,7 @@ let indexerClient = new algosdk.Indexer(indexer_token, indexer_server, indexer_p
 </head>
 
 
-<body>
+<body onload="connectToWallet()">
 
     <div class="sticky-section">
         <nav>
@@ -96,10 +116,11 @@ let indexerClient = new algosdk.Indexer(indexer_token, indexer_server, indexer_p
       </div>
 
       <div class="contentwrapper white">
-        <center><h2>Algonac (= the Algomon Almanac)</h2></center>
+        <center><h2>Algonac (= the Algomon Almanac)</h2>
+        <span id="walletInfo">Connect your Algorand wallet to display collection</span></center>
         <center><h3>Regular</h3>
     <card>
-          <div class="container" id="card1" style="background:url('img/almanac1.jpg');background-size:contain">
+          <div class="container" id="Antares" style="background:url('img/almanac1.jpg');background-size:contain">
         <div class="preview" >
             <div class="row" >
                 <p class="rarity common">Common</p>
@@ -122,7 +143,7 @@ let indexerClient = new algosdk.Indexer(indexer_token, indexer_server, indexer_p
       </card>
       
       <card>
-        <div class="container" id="card2" style="background:url('img/almanac2.jpg');background-size:contain">
+        <div class="container" id="Naos" style="background:url('img/almanac2.jpg');background-size:contain">
       <div class="preview" >
           <div class="row" >
               <p class="rarity common">Common</p>
@@ -145,7 +166,7 @@ let indexerClient = new algosdk.Indexer(indexer_token, indexer_server, indexer_p
     </card>
 
     <card>
-      <div class="container" id="card3" style="background:url('img/almanac3.jpg');background-size:contain">
+      <div class="container" id="Pipoltr" style="background:url('img/almanac3.jpg');background-size:contain">
     <div class="preview" >
         <div class="row" >
             <p class="rarity common">Common</p>
