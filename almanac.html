@@ -88,7 +88,7 @@ function setupAlmanac(){
          var mon = algomonOwned[i];
          var monName = almanac[mon["asset-id"]];
          textData += monName +": x"+mon["amount"]+" "
-         document.getElementById(monName).style.background="url('img/"+monName+".gif')";
+         document.getElementById(monName).style.background="url('img/"+monName.toLowerCase()+".gif')";
          document.getElementById(monName).style.backgroundSize="contain";
       }
   }
