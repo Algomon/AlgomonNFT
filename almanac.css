@@ -73,7 +73,7 @@
     display: relative;
     position: relative;
     top: 66%;
-    left: 56%;
+    left: 50%;
     height: 220px;
     width: 350px;
     background: #ffffff;
@@ -86,8 +86,6 @@
     transition-duration: 0.9s;
     animation: shadow 5s linear infinite;
 }
-
-
 
 .preview {
     position: absolute;
@@ -128,8 +126,9 @@
 .details {
     position: relative;
     margin: 0px;
-    padding: 15px;
-    padding-top:1%;
+    padding: 10px;
+    padding-left:7%;
+    padding-top:2%;
     top: -15%;
 }
 
@@ -139,7 +138,6 @@
     margin-right: 80px;
     padding: 0px;
     margin-top:1px;
-   
 }
 
 #about:hover>.details {
@@ -196,13 +194,15 @@ p.minted{
 
 p.name{
   text-shadow: 0.2px 0.5px 1px lightblue, 0 2px 5px white, 1px 2px 2px lightsteelblue;
-  left:0;
   font-size:32px;
   font-weight:bold;}
   p.subheading{font-size: 18px;color: #0066ff;margin-top: -10px;}
 
-.entry{margin-top: 10px;margin-bottom: 10px;}
-.entry p{font-family: 'Roboto Condensed', sans-serif;padding-right:20px;font-size:13px;}
+.entry{margin-top: 3px;margin-bottom: 10px;}
+.entry p{font-family: 'Roboto Condensed', sans-serif;
+  padding-left:2px;padding-right:2px;
+  font-size:14px;
+  letter-spacing: -0.2px;}
 
 #card1x::after{
   content:"COMING SOON";
