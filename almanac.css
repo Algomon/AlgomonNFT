@@ -223,3 +223,9 @@ p.name{
 #card1x{opacity:.56;cursor:help}
 #card1x .about{opacity:0;cursor:help}
 #card1x:hover{opacity:1}
+@media screen and (max-width: 670px) {
+  .container {
+    animation: none;
+  }
+  
+}

@@ -163,6 +163,7 @@ unique {
     color: darkblue;
 }
 
+.tablecontainer{overflow:scroll}
 th{font-size:larger;background-color: var(--primary);color:white}
 td{font-size:larger;padding:5px;}
 
@@ -171,7 +172,7 @@ td{font-size:larger;padding:5px;}
   color:var(--primary);
   position:absolute;
   margin-top:-70px;
-  margin-left:-60px;
+  margin-left:-10vw;
   font-weight:800;
   filter: drop-shadow(1px 1px 16px var(--primary));
   font-family: 'Bebas Neue';
@@ -205,4 +206,19 @@ td{font-size:larger;padding:5px;}
   25%, 75% {
      opacity: .6;color:orange;
   } 50%{opacity:.6;color:orangered;}0%,100%{opacity:1;color:red}
+}
+#donationAddress{
+  overflow:scroll;
+  display:block;
+}
+@media screen and (max-width: 600px) {
+  #browseAlmanac {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+  
 }
