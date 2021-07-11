@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 * {
   box-sizing: border-box;
   --primary: #09689E;
 }
-
-
 
 
 main {
@@ -12,6 +13,7 @@ main {
   flex-direction: column;
   width: 95vw;
   height: 50vh;
+  font-family: 'Ubuntu';
 }
 
 .slides-container {
@@ -39,6 +41,7 @@ main {
   max-height:500px;
   width: 270px;
   margin-top:0;
+  
 }
 
 .art{
@@ -97,6 +100,7 @@ figcaption::before{
     width:100vw;
     padding-top:2vh;
     padding-bottom:1vh;
+    font-family: 'Roboto Slab', sans-serif;
 }p{margin-top:-10px}
 .black{background-color:#09689E;color:#f6f6f6}
 .white{background-color:white;color:#0D0F10}
@@ -127,13 +131,16 @@ nav a{
   float:right;
   text-decoration:none;
   color:white;
-  font-size:18px; 
-  padding: 20px 30px;  
+  font-size:x-large; 
+  padding: 15px 15px;
   -webkit-transition: all 0.2s ease-out;
 	-moz-transition: all 0.2s ease-out;
 	-ms-transition: all 0.2s ease-out;
 	-o-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
+  font-family: 'Bebas Neue';
+  letter-spacing:3px;
+  
 }
 nav a:hover{
   background-color:#002e5b; 
@@ -158,3 +165,44 @@ unique {
 
 th{font-size:larger;background-color: var(--primary);color:white}
 td{font-size:larger;padding:5px;}
+
+#browseAlmanac{
+  font-size:xx-large;
+  color:var(--primary);
+  position:absolute;
+  margin-top:-70px;
+  margin-left:-60px;
+  font-weight:800;
+  filter: drop-shadow(1px 1px 16px var(--primary));
+  font-family: 'Bebas Neue';
+  letter-spacing:6px;
+}#browseAlmanac::after{
+  content:"🕮";
+  color:blue;
+  font-size:24px;
+  font-weight:800;
+  margin-left:2px;
+  position:absolute;
+  top:5px;
+  transform:rotate(15deg);
+}
+#browseAlmanac::before{
+  content:"NEW!";
+  color:red;
+  font-size:20px;
+  font-weight:800;
+  margin-left:-29px;
+  position:absolute;
+  top:-13px;
+  transform:rotate(-32deg);
+  animation: flash 3s linear infinite;
+  filter: drop-shadow(1px 1px 16px red);
+}
+@keyframes flash {
+  15%, 85% {
+     opacity: .8;color:orchid;
+  }
+  25%, 75% {
+     opacity: .6;color:orange;
+  } 50%{opacity:.6;color:orangered;}0%,100%{opacity:1;color:red}
+}

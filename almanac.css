@@ -60,12 +60,14 @@
     }
 }
 
+
 .about:hover {
     transform: scale(2.0);
     border-radius: 0%;
+
 }
 
-.about:hover>.fas.fa-info-circle {
+.about:hover>.fas.fa-info-circle.infoicon {
     display: none;
 }
 
@@ -85,6 +87,7 @@
     border-width: 2px;
     transition-duration: 0.9s;
     animation: shadow 5s linear infinite;
+
 }
 
 .preview {
@@ -130,7 +133,8 @@
     padding-left:7%;
     padding-top:2%;
     top: -15%;
-}
+    display:none;
+} 
 
 .details p {
     font-family: 'Bebas Neue';
