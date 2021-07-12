@@ -177,11 +177,20 @@ nav a:hover{
 common {
     color:darkgreen
 }
+uncommon {
+    color: orange;
+}
 rare {
-    color: rgb(255, 136, 0);
+    color: orangered;
+}
+epic {
+  color: blueviolet;
+}
+legendary {
+  color: darkmagenta;
 }
 unique {
-    color: darkblue;
+    color: red;
 }
 
 .tablecontainer{overflow:scroll}
