@@ -22,7 +22,9 @@
   var userAddressId = "";
   var algomonOwned = [];
   var almanac = {	265533459:"MissalGo",265555409:"Antares",265564701:"Naos",265573153:"Pipoltr",
-  266625413:"Intan",266779424:"Liesma",	267140826:"Gumala", 	267364802:"Procyon",269353009:"Karaka",	269368230:"Adhafera", 273652384:"Timir",273656502:"Yildun",273659322:"Uruk"}
+  266625413:"Intan",266779424:"Liesma",	267140826:"Gumala", 	267364802:"Procyon",269353009:"Karaka",	269368230:"Adhafera", 273652384:"Timir",273656502:"Yildun",273659322:"Uruk"};
+
+  var rares = ["Timir", "Yildun", "Uruk"];
   
   
   function connectToWallet(){
@@ -70,7 +72,6 @@ xhr.onreadystatechange = function () {
         if (assets[i]["creator"]=="C67GXS7YG5N32HFJ56TUCLDOUWEJGMB62GXTYBBHQE3V7TX2KPBSTI5CDA"
         && assets[i]["amount"]>0) algomonOwned.push(assets[i])
       }
-      console.log(algomonOwned);
       setupAlmanac();
    }};
 xhr.send();
@@ -84,12 +85,16 @@ function setupAlmanac(){
     } 
     else {
     textData = "Algomon found! ";
+    document.getElementById("achievement1").className ="badge unlocked";
+    if (algomonOwned.length>=5) document.getElementById("achievement2").className ="badge unlocked";
     for (i in algomonOwned){
          var mon = algomonOwned[i];
          var monName = almanac[mon["asset-id"]];
          textData += monName +": x"+mon["amount"]+" "
          document.getElementById(monName).style.background="url('img/"+monName.toLowerCase()+".gif')";
          document.getElementById(monName).style.backgroundSize="contain";
+
+         if (rares.includes(monName)) document.getElementById("achievement3").className ="badge unlocked";
       }
   }
   document.getElementById("walletInfo").textContent=textData;
@@ -440,7 +445,15 @@ function setupAlmanac(){
             </div>
         </div> </div>
         </card> </center>
-
+        <div id="Achievements" class="contentwrapper black">
+          
+          <center><h2>Achievements</h2>
+<badge><img src="img/algobadge1.png" id="achievement1" class="badge locked"></img><span class="badgeinfo">Awarded when you collect your first algomon.</span></badge>
+<badge><img src="img/algobadge2.png" id="achievement2" class="badge locked"></img><span class="badgeinfo">Awarded when you collect five different algomon.</span></badge>
+<badge><img src="img/algobadge3.png" id="achievement3" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one rare algomon.</span></badge>
+           </center>
+          
+        </div>
         <div id="List" class="contentwrapper white">
           <div class="content">
             <center><h2>Asset List</h2> 
