@@ -24,7 +24,7 @@
   var almanac = {	265533459:"MissalGo",265555409:"Antares",265564701:"Naos",265573153:"Pipoltr",
   266625413:"Intan",266779424:"Liesma",	267140826:"Gumala", 	267364802:"Procyon",269353009:"Karaka",	269368230:"Adhafera", 273652384:"Timir",273656502:"Yildun",273659322:"Uruk"};
 
-  var rares = ["Timir", "Yildun", "Uruk"];
+  var rares = ["Timir", "Yildun", "Uruk","MissalGo"];
   
   
   function connectToWallet(){
@@ -72,6 +72,7 @@ xhr.onreadystatechange = function () {
         if (assets[i]["creator"]=="C67GXS7YG5N32HFJ56TUCLDOUWEJGMB62GXTYBBHQE3V7TX2KPBSTI5CDA"
         && assets[i]["amount"]>0) algomonOwned.push(assets[i])
       }
+      console.log(addressInfo)
       setupAlmanac();
    }};
 xhr.send();
@@ -87,6 +88,7 @@ function setupAlmanac(){
     textData = "Algomon found! ";
     document.getElementById("achievement1").className ="badge unlocked";
     if (algomonOwned.length>=5) document.getElementById("achievement2").className ="badge unlocked";
+    if (algomonOwned.length>=10) document.getElementById("achievement4").className ="badge unlocked";
     for (i in algomonOwned){
          var mon = algomonOwned[i];
          var monName = almanac[mon["asset-id"]];
@@ -114,7 +116,7 @@ function setupAlmanac(){
     <div class="sticky-section">
         <nav>
           <a id="login" style="background-color:#002e5b; 
-          cursor: pointer;" onclick="connectToWallet(); lookupAddress(userAddressId)">Connect Wallet</a>
+          cursor: pointer;" onclick="connectToWallet();">Connect Wallet</a>
           <a href='https://reddit.com/r/Algomon'>Trade</a>
           <a href='https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM'>Buy</a>
           <a href="./">Home</a>
@@ -363,7 +365,7 @@ function setupAlmanac(){
     <i class="fas fa-info-circle infoicon"></i>
     <div class="details">
         <p class="name">Yildun</p>
-        <p class="subheading">The Trickster</p>
+        <p class="subheading">The Luminescent</p>
         <div class="entry">
           <p><b>Name meaning: </b> "Star"</p>
          <p>Its body can absorb and emit various kinds of radiation, which it uses as energy to move or grow new limbs. When lacking energy, it may lay dormant for decades at a time, seemingly dead, only to rebounce back to life as soon as it recharges. </p>
@@ -451,6 +453,7 @@ function setupAlmanac(){
 <badge><img src="img/algobadge1.png" id="achievement1" class="badge locked"></img><span class="badgeinfo">Awarded when you collect your first algomon.</span></badge>
 <badge><img src="img/algobadge2.png" id="achievement2" class="badge locked"></img><span class="badgeinfo">Awarded when you collect five different algomon.</span></badge>
 <badge><img src="img/algobadge3.png" id="achievement3" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one rare algomon.</span></badge>
+<badge><img src="img/algobadge4.png" id="achievement4" class="badge locked"></img><span class="badgeinfo">Awarded when you collect ten different algomon.</span></badge>
            </center>
           
         </div>

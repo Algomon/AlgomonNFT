@@ -286,7 +286,7 @@ badge .badgeinfo {
   /* Position the tooltip */
   position: absolute;
   margin-left:-125px;
-  margin-top:25px;
+  margin-top:15px;
   z-index: 1;
 }
 
