@@ -24,7 +24,8 @@
   var almanac = {	265533459:"MissalGo",265555409:"Antares",265564701:"Naos",265573153:"Pipoltr",
   266625413:"Intan",266779424:"Liesma",	267140826:"Gumala", 	267364802:"Procyon",269353009:"Karaka",	269368230:"Adhafera", 273652384:"Timir",273656502:"Yildun",273659322:"Uruk"};
 
-  var rares = ["Timir", "Yildun", "Uruk","MissalGo"];
+  var rares = ["Timir", "Yildun"];
+  var epic = ["Uruk"];
   
   
   function connectToWallet(){
@@ -97,6 +98,10 @@ function setupAlmanac(){
          document.getElementById(monName).style.backgroundSize="contain";
 
          if (rares.includes(monName)) document.getElementById("achievement3").className ="badge unlocked";
+         if (epic.includes(monName)) {
+           document.getElementById("achievement3").className ="badge unlocked";
+           document.getElementById("achievement5").className ="badge unlocked";
+          }
       }
   }
   document.getElementById("walletInfo").textContent=textData;
@@ -454,6 +459,7 @@ function setupAlmanac(){
 <badge><img src="img/algobadge2.png" id="achievement2" class="badge locked"></img><span class="badgeinfo">Awarded when you collect five different algomon.</span></badge>
 <badge><img src="img/algobadge3.png" id="achievement3" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one rare algomon.</span></badge>
 <badge><img src="img/algobadge4.png" id="achievement4" class="badge locked"></img><span class="badgeinfo">Awarded when you collect ten different algomon.</span></badge>
+<badge><img src="img/algobadge5.png" id="achievement5" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one epic algomon.</span></badge>
            </center>
           
         </div>
