@@ -76,7 +76,7 @@
     position: relative;
     top: 66%;
     left: 50%;
-    height: 220px;
+    height: 240px;
     width: 350px;
     background: #ffffff;
     border-top-left-radius: 56%;
@@ -129,10 +129,9 @@
 .details {
     position: relative;
     margin: 0px;
-    padding: 10px;
-    padding-left:7%;
-    padding-top:0%;
-    top: -15%;
+    padding: 1px;
+    padding-left:4.5%;
+    padding-top:4.5%;
     display:none;
 } 
 
@@ -141,7 +140,6 @@
     margin: 0px;
     margin-right: 80px;
     padding: 0px;
-    margin-top:1px;
 }
 
 #about:hover>.details {
@@ -205,15 +203,18 @@ p.minted{
 }
 
 p.name{
+  padding:3px;
   text-shadow: 0.2px 0.5px 1px lightblue, 0 2px 5px white, 1px 2px 2px lightsteelblue;
-  font-size:32px;
-  font-weight:bold;}
+  font-size:30px;
+  font-weight:bold;
+}
   p.subheading{font-size: 18px;color: #0066ff;margin-top: -10px;}
 
-.entry{margin-top: 2px;margin-bottom: 5px;}
+.entry{
+  padding: -1px;}
 .entry p{font-family: 'Roboto Condensed', sans-serif;
   padding-left:2px;padding-right:2px;
-  font-size:14px;
+  font-size:13.5px;
   letter-spacing: -0.5px;}
 
 .comingsoon::after{

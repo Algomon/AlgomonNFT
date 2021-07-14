@@ -22,10 +22,12 @@
   var userAddressId = "";
   var algomonOwned = [];
   var almanac = {	265533459:"MissalGo",265555409:"Antares",265564701:"Naos",265573153:"Pipoltr",
-  266625413:"Intan",266779424:"Liesma",	267140826:"Gumala", 	267364802:"Procyon",269353009:"Karaka",	269368230:"Adhafera", 273652384:"Timir",273656502:"Yildun",273659322:"Uruk"};
+  266625413:"Intan",266779424:"Liesma",	267140826:"Gumala", 	267364802:"Procyon",269353009:"Karaka",	269368230:"Adhafera", 273652384:"Timir",273656502:"Yildun",273659322:"Uruk",276489196:"Unukalhai",276493753:"Fafnir",276495735:"Tapecue"};
 
   var rares = ["Timir", "Yildun"];
-  var epic = ["Uruk"];
+  var epic = ["Uruk","Fafnir"];
+  var special = ["MissalGo", "Bélénos"]
+  var dragons = ["Fafnir"]
   
   
   function connectToWallet(){
@@ -102,6 +104,8 @@ function setupAlmanac(){
            document.getElementById("achievement3").className ="badge unlocked";
            document.getElementById("achievement5").className ="badge unlocked";
           }
+          if (special.includes(monName)) document.getElementById("achievement6").className ="badge unlocked";
+          if (dragons.includes(monName)) document.getElementById("achievement7").className ="badge unlocked";
       }
   }
   document.getElementById("walletInfo").textContent=textData;
@@ -304,7 +308,7 @@ function setupAlmanac(){
         <p class="name">Karaka</p>
         <p class="subheading">The Mercurial</p>
         <div class="entry">
-          <p><b>Name meaning: </b> New Zealand Laurel</p>
+          <p><b>Name meaning: </b> A type of laurel from New Zealand</p>
          <p>A species of ant that over the decades has adapted to live in symbiosys with a fern tree. Its body is entangled in roots and vines that it can move thanks to its extraordinary strength.</p>
         </div>
     </div>
@@ -380,7 +384,7 @@ function setupAlmanac(){
 </card>
 
 <card>
-  <div class="container comingsoon" id="Uruk" style="background:url('img/almanac12.jpg');background-size:contain">
+  <div class="container" id="Uruk" style="background:url('img/almanac12.jpg');background-size:contain">
 <div class="preview" >
     <div class="row" >
         <p class="rarity epic">Epic</p>
@@ -393,10 +397,79 @@ function setupAlmanac(){
     <i class="fas fa-info-circle infoicon"></i>
     <div class="details">
         <p class="name">Uruk</p>
-        <p class="subheading">The Trickster</p>
+        <p class="subheading">The Resilient</p>
         <div class="entry">
-          <p><b>Name meaning: </b> "Braid of the Lion's Mane"</p>
-         <p>A cursed gargoyle statue that got taken over by a spirit. It likes to stand in place of inanimate statues and play tricks on humans and especially to scare children, but it is not violent by nature.</p>
+          <p><b>Name meaning: </b> An ancient city of Mesopotamia</p>
+         <p>They live in cold, remote areas where they like to live in isolation away from other species. They prefer to avoid conflicts and will rather leave you alone than get into a fight, despite their large size and vigorous strength.</p>
+        </div>
+    </div>
+</div> </div>
+</card>
+
+<card>
+  <div class="container" id="Unukalhai" style="background:url('img/almanac13.jpg');background-size:contain">
+<div class="preview" >
+    <div class="row" >
+        <p class="rarity uncommon">Uncommon</p>
+        <p class="minted">500 minted</p>
+    </div>
+    <div class="row">
+    </div>
+</div>
+<div class="about" id="about">
+    <i class="fas fa-info-circle infoicon"></i>
+    <div class="details">
+        <p class="name">Unukalhai</p>
+        <p class="subheading">The Spiteful</p>
+        <div class="entry">
+          <p><b>Name meaning: </b> "Serpent's Neck"</p>
+         <p>They can withstand extreme heat and are abundant in tropical islands near active volcanoes. Their bite is extremely venomous and can cause paralysis, which Unukalhai uses to slowly torture their prey as they feed on them. </p>
+        </div>
+    </div>
+</div> </div>
+</card>
+
+<card>
+  <div class="container" id="Fafnir" style="background:url('img/almanac14.jpg');background-size:contain">
+<div class="preview" >
+    <div class="row" >
+        <p class="rarity epic">Epic</p>
+        <p class="minted">100 minted</p>
+    </div>
+    <div class="row">
+    </div>
+</div>
+<div class="about" id="about">
+    <i class="fas fa-info-circle infoicon"></i>
+    <div class="details">
+        <p class="name">Fafnir</p>
+        <p class="subheading">The Protector</p>
+        <div class="entry">
+          <p><b>Name meaning: </b> Mythical Norse dwarf turned into a dragon</p>
+         <p>Mostly found deep under the surface of the ocean, where they provide small fish shelter from larger predators. They are not known to emit sounds, yet they are perfectly able to communicate with each other and other sea creatures. </p>
+        </div>
+    </div>
+</div> </div>
+</card>
+
+<card>
+  <div class="container" id="Tapecue" style="background:url('img/almanac15.jpg');background-size:contain">
+<div class="preview" >
+    <div class="row" >
+        <p class="rarity common">Common</p>
+        <p class="minted">1000 minted</p>
+    </div>
+    <div class="row">
+    </div>
+</div>
+<div class="about" id="about">
+    <i class="fas fa-info-circle infoicon"></i>
+    <div class="details">
+        <p class="name">Tapecue</p>
+        <p class="subheading">The Resilient</p>
+        <div class="entry">
+          <p><b>Name meaning: </b> "Milky Way"</p>
+         <p>They are blind but have exceptional sense of smell which they use to orientate. When in a fight, they can go into a violent frenzy which involves lots of screaming and growling.</p>
         </div>
     </div>
 </div> </div>
@@ -460,6 +533,9 @@ function setupAlmanac(){
 <badge><img src="img/algobadge3.png" id="achievement3" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one rare algomon.</span></badge>
 <badge><img src="img/algobadge4.png" id="achievement4" class="badge locked"></img><span class="badgeinfo">Awarded when you collect ten different algomon.</span></badge>
 <badge><img src="img/algobadge5.png" id="achievement5" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one epic algomon.</span></badge>
+<badge><img src="img/algobadge6.png" id="achievement6" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one special or ultrarare algomon.</span></badge>
+<badge><img src="img/algobadge7.png" id="achievement7" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one dragon algomon.</span></badge>
+
            </center>
           
         </div>
@@ -563,6 +639,27 @@ function setupAlmanac(){
                   <td><a href="https://algoexplorer.io/asset/273659322">273659322</a></td>
                   <td><epic>100 minted</epic</td>
                   <td>Trade only</td>
+                </tr>
+                <tr>
+                  <td><b>13# Unukalhai</b></td>
+                  <td>MON13UNU</td>
+                  <td><a href="https://algoexplorer.io/asset/276489196">276489196</a></td>
+                  <td><uncommon>500 minted</uncommon></td>
+                    <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
+                </tr>
+                <tr>
+                  <td><b>14# Famfir</b></td>
+                  <td>MON12URU</td>
+                  <td><a href="https://algoexplorer.io/asset/276493753">276493753</a></td>
+                  <td><epic>100 minted</epic></td>
+                    <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
+                </tr>
+                <tr>
+                  <td><b>15# Tapecue</b></td>
+                  <td>MON15URU</td>
+                  <td><a href="https://algoexplorer.io/asset/276495735">276495735</a></td>
+                  <td><common>1000 minted</common></td>
+                    <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
                 </tr>
               </tbody>
             </table>
