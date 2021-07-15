@@ -294,7 +294,14 @@ badge .badgeinfo {
 badge:hover .badgeinfo {
   visibility: visible;
 }
-
+#MissalGo{
+  background:url('img/almanac0.jpg');background-size:contain;
+}#MissalGo:hover{  background:url("img/missalgo.gif");background-size:contain;
+}
+#Bélénos{
+  background:url('img/almanac1x.jpg');background-size:contain;
+}#Bélénos:hover{  background:url("img/bélénos.gif");background-size:contain;
+}
 
 
 @media screen and (max-width: 670px) {
