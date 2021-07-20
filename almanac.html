@@ -96,10 +96,12 @@ function setupAlmanac(){
     for (i in algomonOwned){
          var mon = algomonOwned[i];
          var monName = almanac[mon["asset-id"]];
-         textData += monName +": x"+mon["amount"]+" "
+
+         document.getElementById(monName).getElementsByClassName("owned")[0].textContent=mon["amount"];
+         document.getElementById(monName).getElementsByClassName("owned")[0].style.color="#09689E"
          document.getElementById(monName).style.background="url('img/"+monName.toLowerCase()+".gif')";
          document.getElementById(monName).style.backgroundSize="contain";
-
+        
          if (rares.includes(monName)) document.getElementById("achievement3").className ="badge unlocked";
          if (epic.includes(monName)) {
            document.getElementById("achievement3").className ="badge unlocked";
@@ -143,6 +145,7 @@ function setupAlmanac(){
             <div class="row" >
                 <p class="rarity common">Common</p>
                 <p class="minted">1000 minted</p>
+                <p class="owned">0</p>
             </div>
             <div class="row">
             </div>
@@ -154,7 +157,7 @@ function setupAlmanac(){
                 <p class="subheading">The Unbreakable</p>
                 <div class="entry">
                   <p><b>Name meaning: </b> "Rival of Ades"</p>
-                 <p>The surface of its shell is as hard as that of a diamond. It has an aggressive temperament and will try to fight anything that moves.</p>
+                 <p>The surface of its shell is as hard as that of a diamond. It has an aggressive temperament and will try to fight anything that moves. Two Antares will often fight each other for days until one of them drops from exhaustion.</p>
                 </div>
             </div>
         </div> </div>
@@ -166,6 +169,7 @@ function setupAlmanac(){
           <div class="row" >
               <p class="rarity common">Common</p>
               <p class="minted">1000 minted</p>
+              <p class="owned">0</p>
           </div>
           <div class="row">
           </div>
@@ -177,7 +181,7 @@ function setupAlmanac(){
               <p class="subheading">The Omen</p>
               <div class="entry">
                 <p><b>Name meaning: </b> "Ship, Sanctuary"</p>
-               <p>Very elusive, not much its known about them. It is said to bring bad luck upon those it shows itself to. Some believe it literally feeds off luck. </p>
+               <p>Very elusive, not much its known about them. It is said to bring bad luck upon those it shows itself to. Some believe Naos literally feeds off luck, and try to avoid meeting its stare at all costs. </p>
               </div>
           </div>
       </div> </div>
@@ -189,6 +193,7 @@ function setupAlmanac(){
         <div class="row" >
             <p class="rarity common">Common</p>
             <p class="minted">1000 minted</p>
+            <p class="owned">0</p>
         </div>
         <div class="row">
         </div>
@@ -200,7 +205,7 @@ function setupAlmanac(){
             <p class="subheading">The Will-o'-the-wisp</p>
             <div class="entry">
               <p><b>Name meaning: </b> "Butterfly"</p>
-             <p>It is commonly found in graveyards or around corpses. Nearly invisible during the day, it emits a very bright light when it's dark.</p>
+             <p>It is commonly found in graveyards or around corpses. Nearly invisible during the day, it emits a very bright light when it's dark. According to a legend, Pipoltr seeks nearly the nearly deceased to prey on their souls before they can reach the afterlife.</p>
             </div>
         </div>
     </div> </div>
@@ -211,6 +216,7 @@ function setupAlmanac(){
       <div class="row" >
           <p class="rarity uncommon">Uncommon</p>
           <p class="minted">500 minted</p>
+          <p class="owned">0</p>
       </div>
       <div class="row">
       </div>
@@ -222,7 +228,7 @@ function setupAlmanac(){
           <p class="subheading">The Unliving</p>
           <div class="entry">
             <p><b>Name meaning: </b> "Diamond"</p>
-           <p>Entirely made of bones and organic matter, with no skin nor vital organs. Some scientists believe a fungus may have taken over the remains of an ancient creature.</p>
+           <p>Entirely made of bones and organic matter, it does not possess skin nor any vital organs. Some scientists believe a fungus may have taken over the remains of an ancient creature, giving birth to Intan.</p>
           </div>
       </div>
   </div> </div>
@@ -233,6 +239,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity uncommon">Uncommon</p>
         <p class="minted">500 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -244,7 +251,7 @@ function setupAlmanac(){
         <p class="subheading">The Derelict</p>
         <div class="entry">
           <p><b>Name meaning: </b> "Fire"</p>
-         <p>It was once part of a much larger population that got decimated by predators and climate change. It evolved to survive in the most extreme environmental conditions.</p>
+         <p>It was once part of a much larger population that got decimated by larger predators and climate change. It evolved to survive in the most extreme environmental conditions, and it is mostly found in cold deserts.</p>
         </div>
     </div>
 </div> </div>
@@ -255,6 +262,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity common">Common</p>
         <p class="minted">1000 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -277,6 +285,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity uncommon">Uncommon</p>
         <p class="minted">500 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -299,6 +308,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity common">Common</p>
         <p class="minted">1000 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -321,6 +331,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity uncommon">Uncommon</p>
         <p class="minted">500 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -344,6 +355,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity rare">Rare</p>
         <p class="minted">250 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -367,6 +379,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity rare">Rare</p>
         <p class="minted">250 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -390,6 +403,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity epic">Epic</p>
         <p class="minted">100 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -413,6 +427,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity uncommon">Uncommon</p>
         <p class="minted">500 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -436,6 +451,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity epic">Epic</p>
         <p class="minted">100 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -459,6 +475,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity common">Common</p>
         <p class="minted">1000 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -482,6 +499,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity common">Common</p>
         <p class="minted">1000 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -505,6 +523,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity uncommon">Uncommon</p>
         <p class="minted">500 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -529,6 +548,7 @@ function setupAlmanac(){
     <div class="row" >
         <p class="rarity rare">Rare</p>
         <p class="minted">250 minted</p>
+        <p class="owned">0</p>
     </div>
     <div class="row">
     </div>
@@ -558,6 +578,7 @@ function setupAlmanac(){
             <div class="row" >
                 <p class="rarity unique">Unique</p>
                 <p class="minted">1 minted</p>
+                <p class="owned">0</p>
             </div>
             <div class="row">
             </div>
@@ -580,6 +601,7 @@ function setupAlmanac(){
             <div class="row" >
                 <p class="rarity legendary">Legendary</p>
                 <p class="minted">3 minted</p>
+                <p class="owned">0</p>
             </div>
             <div class="row">
             </div>
@@ -596,8 +618,8 @@ function setupAlmanac(){
             </div>
         </div> </div>
         </card> </center>
+      </br></br>
         <div id="Achievements" class="contentwrapper black">
-          
           <center><h2>Achievements</h2>
 <badge><img src="img/algobadge1.png" id="achievement1" class="badge locked"></img><span class="badgeinfo">Awarded when you collect your first algomon.</span></badge>
 <badge><img src="img/algobadge2.png" id="achievement2" class="badge locked"></img><span class="badgeinfo">Awarded when you collect five different algomon.</span></badge>
@@ -735,22 +757,21 @@ function setupAlmanac(){
                 <tr>
                   <td><b>16# Iklil</b></td>
                   <td>MON16IKL</td>
-                  <td><a href="https://algoexplorer.io/asset/ 281197063"></a>281197063</td>
+                  <td><a href="https://algoexplorer.io/asset/ 281197063">281197063</a></td>
                   <td><common>1000 minted</common></td>
                     <td>Trade Only</td>
                 </tr>
                 <tr>
                   <td><b>17# Vega</b></td>
                   <td>MON17VEG</td>
-                  <td><a href="https://algoexplorer.io/asset/281197972"></a>281197972</td>
+                  <td><a href="https://algoexplorer.io/asset/281197972">281197972</a></td>
                   <td><uncommon>500 minted</uncommon></td>
                     <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
                 </tr>
                 <tr>
                   <td><b>18# Grumium</b></td>
                   <td>MON18GRU</td>
-                  <td><a href="https://algoexplorer.io/asset/281198611
-                    "></a>281198611</td>
+                  <td><a href="https://algoexplorer.io/asset/281198611">281198611</a></td>
                   <td><rare>250 minted</rare></td>
                     <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
                 </tr>

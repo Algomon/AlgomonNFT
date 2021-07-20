@@ -210,6 +210,22 @@ p.name{
 }
   p.subheading{font-size: 18px;color: #0066ff;margin-top: -10px;}
 
+  
+p.owned{
+  position:absolute;
+  color:darkslategray;
+  opacity:0.5;
+  right:10px;
+  top:20px;
+  font-weight:900;
+  font-family: 'Bebas Neue';
+  font-size:39px;
+  letter-spacing:-2px;
+  z-index:99;
+  cursor:pointer;
+}
+
+
 .entry{
   padding: -1px;}
 .entry p{font-family: 'Roboto Condensed', sans-serif;
