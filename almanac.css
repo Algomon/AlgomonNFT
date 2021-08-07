@@ -318,6 +318,10 @@ badge:hover .badgeinfo {
   background:url('img/almanac1x.jpg');background-size:contain;
 }#Bélénos:hover{  background:url("img/bélénos.gif");background-size:contain;
 }
+#Sika{
+  background:url('img/almanac2x.jpg');background-size:contain;
+}#Sika:hover{  background:url("img/sika.gif");background-size:contain;
+}
 
 
 @media screen and (max-width: 670px) {
