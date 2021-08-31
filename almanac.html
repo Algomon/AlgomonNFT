@@ -23,12 +23,14 @@
   var algomonOwned = [];
   var almanac = {	265533459:"MissalGo",265555409:"Antares",265564701:"Naos",265573153:"Pipoltr",
   266625413:"Intan",266779424:"Liesma",	267140826:"Gumala", 	267364802:"Procyon",269353009:"Karaka",	269368230:"Adhafera", 273652384:"Timir",273656502:"Yildun",273659322:"Uruk",276489196:"Unukalhai",276493753:"Fafnir",276495735:"Tapecue",276954563:"Bélénos",281197063:"Iklil",281197972:"Vega",281198611
-:"Grumium",290008415:"Tangra",295871235:"Sika"};
+:"Grumium",290008415:"Tangra",295871235:"Sika",317020876:"Bibhā",317023890:"Diphda"};
 
   var rares = ["Timir", "Yildun","Grumium","Tangra"];
   var epic = ["Uruk","Fafnir"];
   var special = ["MissalGo", "Bélénos", "Sika"]
   var dragons = ["Fafnir"]
+  var plants = ["Karaka","Intan","Diphda"]
+  var insects = ["Karaka", "Iklil", "Bibhā"]
   
   
   function connectToWallet(){
@@ -85,6 +87,8 @@ xhr.send();
 
 function setupAlmanac(){
     var textData = "";
+    var plantsOwned = 0; insectsOwned = 0;
+
     if (algomonOwned.length==0){
       textData = "I cannot find any algomon linked to this wallet :("
     } 
@@ -93,6 +97,7 @@ function setupAlmanac(){
     document.getElementById("achievement1").className ="badge unlocked";
     if (algomonOwned.length>=5) document.getElementById("achievement2").className ="badge unlocked";
     if (algomonOwned.length>=10) document.getElementById("achievement4").className ="badge unlocked";
+    
     for (i in algomonOwned){
          var mon = algomonOwned[i];
          var monName = almanac[mon["asset-id"]];
@@ -109,7 +114,12 @@ function setupAlmanac(){
           }
           if (special.includes(monName)) document.getElementById("achievement6").className ="badge unlocked";
           if (dragons.includes(monName)) document.getElementById("achievement7").className ="badge unlocked";
+        if (plants.includes(monName)) plantsOwned++;
+        if (plantsOwned>=3) document.getElementById("achievement8").className ="badge unlocked";
+        if (insects.includes(monName)) insectsOwned++;
       }
+
+      
   }
   document.getElementById("walletInfo").textContent=textData;
 }
@@ -591,6 +601,54 @@ function setupAlmanac(){
 </div> </div>
 </card>
 
+<card>
+  <div class="container" id="Bibhā" style="background:url('img/almanac20.jpg');background-size:contain">
+<div class="preview" >
+    <div class="row" >
+        <p class="rarity uncommon">Uncommon</p>
+        <p class="minted">500 minted</p>
+        <p class="owned">0</p>
+    </div>
+    <div class="row">
+    </div>
+</div>
+<div class="about" id="about">
+    <i class="fas fa-info-circle infoicon"></i>
+    <div class="details">
+        <p class="name">Bibhā</p>
+        <p class="subheading">The Deceiver</p>
+        <div class="entry">
+          <p><b>Name meaning: </b> Bright Beam of Light</p>
+         <p>Their behaviour is unusual for they like to hunt but do not feed on their preys. A Bibhā is known to setup web-like traps in dark, narrow places like caves. They will then flash a bright light in order to lure their prey into walking into one of them. They can also mimick human sounds, like that of a baby crying or a person whispering.  </p>
+        </div>
+    </div>
+</div> </div>
+</card>
+
+<card>
+  <div class="container" id="Diphda" style="background:url('img/almanac21.jpg');background-size:contain">
+<div class="preview" >
+    <div class="row" >
+        <p class="rarity uncommon">Uncommon</p>
+        <p class="minted">500 minted</p>
+        <p class="owned">0</p>
+    </div>
+    <div class="row">
+    </div>
+</div>
+<div class="about" id="about">
+    <i class="fas fa-info-circle infoicon"></i>
+    <div class="details">
+        <p class="name">Diphda</p>
+        <p class="subheading">The Pacifier</p>
+        <div class="entry">
+          <p><b>Name meaning: </b> Frog</p>
+         <p>Diphda is a really peaceful creature that can often be spotted near bodies of water on gloomy, rainy days. In some folklore they are believed to generate rainbows after a storm.</p>
+        </div>
+    </div>
+</div> </div>
+</card>
+
 
 </center>
     </div>
@@ -677,6 +735,7 @@ function setupAlmanac(){
 <badge><img src="img/algobadge5.png" id="achievement5" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one epic algomon.</span></badge>
 <badge><img src="img/algobadge6.png" id="achievement6" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one special or ultrarare algomon.</span></badge>
 <badge><img src="img/algobadge7.png" id="achievement7" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one dragon algomon.</span></badge>
+<badge><img src="img/algobadge8.png" id="achievement8" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least three plant-like algomon.</span></badge>
 
            </center>
           
@@ -829,6 +888,20 @@ function setupAlmanac(){
                   <td>MON19TAN</td>
                   <td><a href="https://algoexplorer.io/asset/290008415">290008415</a></td>
                   <td><rare>250 minted</rare></td>
+                    <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
+                </tr>
+                <tr>
+                  <td><b>20# Bibhā</b></td>
+                  <td>MON20BIB</td>
+                  <td><a href="https://algoexplorer.io/asset/317020876">317020876</a></td>
+                  <td><uncommon>500 minted</uncommon></td>
+                    <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
+                </tr>
+                <tr>
+                  <td><b>21# Diphda</b></td>
+                  <td>MON21DIP</td>
+                  <td><a href="https://algoexplorer.io/asset/317023890">317023890</a></td>
+                  <td><uncommon>500 minted</uncommon></td>
                     <td><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM">Rand Gallery</a></td>
                 </tr>
               </tbody>
