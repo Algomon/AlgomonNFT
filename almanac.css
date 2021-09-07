@@ -322,6 +322,10 @@ badge:hover .badgeinfo {
   background:url('img/almanac2x.jpg');background-size:contain;
 }#Sika:hover{  background:url("img/sika.gif");background-size:contain;
 }
+#Muspelheim{
+  background:url('img/almanac3x.jpg');background-size:contain;
+}#Muspelheim:hover{  background:url("img/muspelheim.gif");background-size:contain;
+}
 
 
 @media screen and (max-width: 670px) {
