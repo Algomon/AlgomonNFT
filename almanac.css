@@ -205,6 +205,10 @@ p.rarity{margin:0px;
   color:rgb(255, 109, 255);
   filter: drop-shadow(0px 0px 1px darkblue);
 }
+.limited{
+  color:rgb(109, 255, 236);
+  filter: drop-shadow(0px 0px 1px darkblue);
+}
 p.minted{
   position:absolute;
   top:42px;
