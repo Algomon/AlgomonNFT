@@ -10,8 +10,8 @@
 .container {
     display: relative;
     position: relative;
-    height: 300px;
-    width: 250px;
+    height: 285px;
+    width: 245px;
     background-color:white;
     opacity:.8;
     background-size:contain;
@@ -22,7 +22,8 @@
     border-color: #09689E;
     animation: shadow 3s linear infinite;
 }.container:hover{opacity:1}
-.shiny{height:255px;
+.shiny{height:251px;
+  width:251px;
   border-color: #f0bf1f;
   animation: shinyshadow 3s linear infinite;}
 @keyframes shadow {
@@ -89,10 +90,10 @@
 .about {
     display: relative;
     position: relative;
-    top: 66%;
+    top: 63%;
     left: 50%;
-    height: 240px;
-    width: 350px;
+    height: 265px;
+    width: 340px;
     background: #ffffff;
     border-top-left-radius: 56%;
     border-style: dotted;
@@ -135,7 +136,7 @@
 .line {
     position: relative;
     margin: 0px;
-    top: -17px;
+    top: -13px;
     bottom: 0px;
     left: 20%;
     height: 2px;
@@ -150,7 +151,7 @@
     margin: 0px;
     padding: 1px;
     padding-left:4.5%;
-    padding-top:4.5%;
+    padding-top:1.5%;
     display:none;
 } 
 
