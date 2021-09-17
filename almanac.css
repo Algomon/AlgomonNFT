@@ -22,7 +22,9 @@
     border-color: #09689E;
     animation: shadow 3s linear infinite;
 }.container:hover{opacity:1}
-
+.shiny{height:255px;
+  border-color: #f0bf1f;
+  animation: shinyshadow 3s linear infinite;}
 @keyframes shadow {
     0% {
         box-shadow: 0 0 5px #7181dd;
@@ -34,6 +36,19 @@
     100% {
         box-shadow: 0 0 5px #7181dd;
     }
+}
+
+@keyframes shinyshadow {
+  0% {
+      box-shadow: 0 0 5px #ddc071;
+  }
+  50% {
+      box-shadow: 0 0 20px rgb(151, 163, 231);
+      border-color: rgb(76, 199, 64);
+  }
+  100% {
+      box-shadow: 0 0 5px #bb71dd;
+  }
 }
 
 @keyframes social {
@@ -109,6 +124,10 @@
     display:flex;
     flex-direction: column;
 
+}
+
+.shiny>.preview{
+  display:none;
 }
 .row{display:flex;flex-direction:row;}
 
@@ -325,6 +344,22 @@ badge:hover .badgeinfo {
 #Muspelheim{
   background:url('img/almanac3x.jpg');background-size:contain;
 }#Muspelheim:hover{  background:url("img/muspelheim.gif");background-size:contain;
+}
+#Lich{
+  background:url('img/almanac4x.jpg');background-size:contain;
+}#Lich:hover{  background:url("img/almanac4x.jpg");background-size:contain;
+}
+#Adhil{
+  background:url('img/almanac5x.jpg');background-size:contain;
+}#Adhil:hover{  background:url("img/almanac5x.jpg");background-size:contain;
+}
+#Shiny_Antares{
+  background:url('img/almanacshiny1.jpg');background-size:contain;
+}#Shiny_Antares:hover{  background:url("img/Shiny_Antares.gif");background-size:contain;
+}
+#Shiny_Naos{
+  background:url('img/almanacshiny2.jpg');background-size:contain;
+}#Shiny_Naos:hover{  background:url("img/almanacshiny2.jpg");background-size:contain;
 }
 
 
