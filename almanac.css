@@ -492,3 +492,14 @@ button {
   right: 10px;
   font-size: 10px;
 }
+
+.announcement{
+  font-family: 'Bebas Neue';
+  letter-spacing:.2px;
+  font-size:24px;
+  animation: shine 4s linear infinite;
+}
+
+.promoimage{
+  animation: shinyshadow 1s linear infinite;
+}

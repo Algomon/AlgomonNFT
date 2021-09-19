@@ -15,6 +15,7 @@
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
  <script src="https://unpkg.com/algosdk@latest"></script>
+
 <script
 src="node_modules/myalgo.min.js"
 ></script>
@@ -27,15 +28,15 @@ src="node_modules/myalgo.min.js"
   var algomonOwned = [];
   var almanac = {	265533459:"MissalGo",265555409:"Antares",265564701:"Naos",265573153:"Pipoltr",
   266625413:"Intan",266779424:"Liesma",	267140826:"Gumala", 	267364802:"Procyon",269353009:"Karaka",	269368230:"Adhafera", 273652384:"Timir",273656502:"Yildun",273659322:"Uruk",276489196:"Unukalhai",276493753:"Fafnir",276495735:"Tapecue",276954563:"Bélénos",281197063:"Iklil",281197972:"Vega",281198611
-:"Grumium",290008415:"Tangra",295871235:"Sika",317020876:"Bibhā",317023890:"Diphda",325467324:"Muspelheim"};
+:"Grumium",290008415:"Tangra",295871235:"Sika",317020876:"Bibhā",317023890:"Diphda",325467324:"Muspelheim",338425457:"Shiny Antares"};
 
   var rares = ["Timir", "Yildun","Grumium","Tangra"];
   var epic = ["Uruk","Fafnir"];
-  var special = ["MissalGo", "Bélénos", "Sika","Muspelheim"]
+  var special = ["MissalGo", "Bélénos", "Sika","Muspelheim", "Shiny Antares"]
   var dragons = ["Fafnir","Muspelheim"]
   var plants = ["Karaka","Intan","Diphda"]
   var insects = ["Pipoltr","Karaka", "Iklil", "Bibhā"]
-  
+  var shiny = ["Shiny Antares"]
   
   function connectToWallet(){
   
@@ -146,10 +147,14 @@ function setupAlmanac(){
       <a href="./">Home</a>
     </nav>
   </div>
+
+  <center><a href="https://www.randgallery.com/algo-collection/?address=WILD4G7Q5CINDH4AE4USKNG3CZGT4CED2PNRR7VP6SVQLX27NZNIX2DERM"><img src="img/ShinyAntares.gif" height="250px" class="promoimage"></img></br><u class="announcement"><b>Check on Rand Gallery</b></u></a></center>
+  <!-- Banners
 <div id="banners" style="z-index:99; max-width:300px">
   <div class="wrapper pointer-events-none"></div>
   <div class="flex_wrapper pointer-events-none"></div>
 </div>
+-->
 
       <div class="contentwrapper white">
         <center><h2>Your Algonac (= Algomon Almanac)</h2>
@@ -961,7 +966,7 @@ function setupAlmanac(){
                   <td>MON9ADH</td>
                   <td><a href="https://algoexplorer.io/asset/269368230">269368230</a></td>
                   <td><uncommon>500 minted</uncommon></td>
-                  <td><a href="https://ab2.gallery/asset/269368230">Trade only</a></td>
+                  <td><a href="https://www.nftexplorer.app/asset/269368230">Trade only</a></td>
                 </tr>
                 <tr>
                   <td><b>10# Timir</b></td>
@@ -975,14 +980,14 @@ function setupAlmanac(){
                   <td>MON11YIL</td>
                   <td><a href="https://algoexplorer.io/asset/273656502">273656502</a></td>
                   <td><rare>250 minted</rare></td>
-                  <td><a href="https://ab2.gallery/asset/273656502">Trade only</a></td>
+                  <td><a href="https://www.nftexplorer.app/asset/273656502">Trade only</a></td>
                 </tr>
                 <tr>
                   <td><b>12# Uruk</b></td>
                   <td>MON12URU</td>
                   <td><a href="https://algoexplorer.io/asset/273659322">273659322</a></td>
                   <td><epic>100 minted</epic</td>
-                  <td><a href="https://ab2.gallery/asset/273659322">Trade only</a></td>
+                  <td><a href="https://www.nftexplorer.app/asset/273659322">Trade only</a></td>
                 </tr>
                 <tr>
                   <td><b>13# Unukalhai</b></td>
@@ -1010,7 +1015,7 @@ function setupAlmanac(){
                   <td>MON16IKL</td>
                   <td><a href="https://algoexplorer.io/asset/281197063">281197063</a></td>
                   <td><common>1000 minted</common></td>
-                    <td><a href="https://ab2.gallery/asset/281197063">Trade only</a></td>
+                    <td><a href="https://www.nftexplorer.app/asset/281197063">Trade only</a></td>
                 </tr>
                 <tr>
                   <td><b>17# Vega</b></td>
@@ -1074,24 +1079,46 @@ function setupAlmanac(){
                   <td>MONXBEL</td>
                   <td><a href="https://algoexplorer.io/asset/276954563">276954563</a></td>
                   <td><unique>3 minted</unique></td>
-                  <td><a href="https://ab2.gallery/asset/276954563">Open Market</a></td>
+                  <td><a href="https://www.nftexplorer.app/asset/276954563">Open Market</a></td>
             </tr>
             <tr>
               <td><b>2X# Sika</b></td>
               <td>MONXSIK</td>
               <td><a href="https://algoexplorer.io/asset/295871235">295871235</a></td>
               <td><unique>90 minted (911 burned)</unique></td>
-              <td><a href="https://ab2.gallery/asset/295871235">Open Market</a></td>
+              <td><a href="https://www.nftexplorer.app/asset/295871235">Open Market</a></td>
         </tr>
         <tr>
           <td><b>3X# Muspelheim</b></td>
           <td>MONXMUS</td>
           <td><a href="https://algoexplorer.io/asset/325467324">325467324</a></td>
           <td><unique>5 minted</unique></td>
-          <td><a href="https://ab2.gallery/asset/325467324">Open Market</a></td>
+          <td><a href="https://www.nftexplorer.app/asset/338425457">Open Market</a></td>
     </tr>
           </tbody>
         </table>
+      </br>
+      <b>Shiny</b>
+      <div class="tablecontainer">
+        <table>
+          <thead>
+            <tr>
+              <th>Algomon</th>
+              <th>ASA Name</th>
+              <th>ASA ID</th>
+              <th>Rarity</th>
+              <th>Availability</th>
+            </tr>
+            <tr>
+              <td><b>Shiny Antares</b></td>
+          <td>SHINY1</td>
+          <td><a href="https://algoexplorer.io/asset/338425457">338425457</a></td>
+          <td><unique>1 minted</unique></td>
+          <td><a href="https://www.nftexplorer.app/asset/338425457">Open Market</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </br>
       </div>
               
           </center>
