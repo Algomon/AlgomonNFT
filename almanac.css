@@ -503,3 +503,8 @@ button {
 .promoimage{
   animation: shinyshadow 1s linear infinite;
 }
+
+#AlgoMunchers > img {
+  height:200px
+}
+

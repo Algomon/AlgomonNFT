@@ -36,6 +36,7 @@ src="node_modules/myalgo.min.js"
   var dragons = ["Fafnir","Muspelheim"]
   var plants = ["Karaka","Intan","Diphda"]
   var insects = ["Pipoltr","Karaka", "Iklil", "Bibhā"]
+  var aquatic = ["Antares", "Shiny Antares", "Fafnir", "Grumium", "Diphda", "Shama"]
   var shiny = ["Shiny Antares"]
   
   function connectToWallet(){
@@ -92,7 +93,7 @@ xhr.send();
 
 function setupAlmanac(){
     var textData = "";
-    var plantsOwned = 0; insectsOwned = 0;
+    var plantsOwned = 0; insectsOwned = 0; aquaticOwned = 0;
 
     if (algomonOwned.length==0){
       textData = "I cannot find any algomon linked to this wallet :("
@@ -122,6 +123,9 @@ function setupAlmanac(){
         if (plants.includes(monName)) plantsOwned++;
         if (plantsOwned>=3) document.getElementById("achievement8").className ="badge unlocked";
         if (insects.includes(monName)) insectsOwned++;
+        if (insectsOwned>=3) document.getElementById("achievement10").className ="badge unlocked";
+        if (aquatic.includes(monName)) aquaticOwned++;
+        if (aquaticOwned>=3) document.getElementById("achievement9").className ="badge unlocked";
       }
 
       
@@ -884,6 +888,8 @@ function setupAlmanac(){
 <badge><img src="img/algobadge6.png" id="achievement6" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one special or ultrarare algomon.</span></badge>
 <badge><img src="img/algobadge7.png" id="achievement7" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least one dragon algomon.</span></badge>
 <badge><img src="img/algobadge8.png" id="achievement8" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least three plant-like algomon.</span></badge>
+<badge><img src="img/algobadge9.png" id="achievement9" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least three aquatic algomon.</span></badge>
+<badge><img src="img/algobadge10.png" id="achievement10" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least three insect algomon.</span></badge>
 
            </center>
           
