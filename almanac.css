@@ -504,7 +504,11 @@ button {
   animation: shinyshadow 1s linear infinite;
 }
 
-#AlgoMunchers > img {
-  height:200px
+#AlgoMunchers a > img {
+  height:130px
 }
+#Botanica a > img {
+  height:130px
+}
+
 
