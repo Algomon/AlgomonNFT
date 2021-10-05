@@ -351,6 +351,18 @@ badge:hover .badgeinfo {
   background:url('img/almanac3x.jpg');background-size:contain;
 }#Muspelheim:hover{  background:url("img/muspelheim.gif");background-size:contain;
 }
+#Nosaxa{
+  background:url('img/almanac1y.jpg');background-size:contain;
+}#Nosaxa:hover{  background:url("img/nosaxa.gif");background-size:contain;
+}
+#Nenque{
+  background:url('img/almanac2y.jpg');background-size:contain;
+}#Nenque:hover{  background:url("img/nenque.gif");background-size:contain;
+}
+#Nyamien{
+  background:url('img/almanac3y.jpg');background-size:contain;
+}#Nyamien:hover{  background:url("img/nyamien.gif");background-size:contain;
+}
 #Lich{
   background:url('img/almanac4x.jpg');background-size:contain;
 }#Lich:hover{  background:url("img/almanac4x.jpg");background-size:contain;

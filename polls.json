@@ -1,0 +1,14 @@
+{
+    "yes": [
+        {"address":"BLABLA",
+        "votingPower":1}
+    ],
+    "no": [
+        {"address":"BLABLA",
+        "votingPower":1}
+    ],
+    "no answer": [
+        {"address":"BLABLA",
+        "votingPower":1}
+    ]
+}
