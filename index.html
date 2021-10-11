@@ -28,16 +28,17 @@ src="node_modules/myalgo.min.js"
   var algomonOwned = [];
   var almanac = {	265533459:"MissalGo",265555409:"Antares",265564701:"Naos",265573153:"Pipoltr",
   266625413:"Intan",266779424:"Liesma",	267140826:"Gumala", 	267364802:"Procyon",269353009:"Karaka",	269368230:"Adhafera", 273652384:"Timir",273656502:"Yildun",273659322:"Uruk",276489196:"Unukalhai",276493753:"Fafnir",276495735:"Tapecue",276954563:"Bélénos",281197063:"Iklil",281197972:"Vega",281198611
-:"Grumium",290008415:"Tangra",295871235:"Sika",317020876:"Bibhā",317023890:"Diphda",325467324:"Muspelheim",338425457:"Shiny Antares",356502477:"Shama",356435473:"Nosaxa",356436946:"Nenque",356437990:"Nyamien"};
+:"Grumium",290008415:"Tangra",295871235:"Sika",317020876:"Bibhā",317023890:"Diphda",325467324:"Muspelheim",338425457:"Shiny Antares",356502477:"Shama",356435473:"Nosaxa",356436946:"Nenque",356437990:"Nyamien",364930039:"Lich"};
 
   var rares = ["Timir", "Yildun","Grumium","Tangra"];
   var epic = ["Uruk","Fafnir"];
-  var special = ["MissalGo", "Bélénos", "Sika","Muspelheim", "Shiny Antares","Nosaxa","Nenque","Nyamien"]
+  var special = ["MissalGo", "Bélénos", "Sika","Muspelheim", "Shiny Antares","Nosaxa","Nenque","Nyamien","Lich"]
   var dragons = ["Fafnir","Muspelheim"]
   var plants = ["Karaka","Intan","Diphda"]
   var insects = ["Pipoltr","Karaka", "Iklil", "Bibhā"]
   var aquatic = ["Antares", "Shiny Antares", "Fafnir", "Grumium", "Diphda", "Shama"]
   var shiny = ["Shiny Antares"]
+  var mingos = ["Sika","Lich","Nosaxa","Nyamien","Nenque"]
   
   function connectToWallet(){
   
@@ -120,6 +121,7 @@ function setupAlmanac(){
           }
           if (special.includes(monName)) document.getElementById("achievement6").className ="badge unlocked";
           if (dragons.includes(monName)) document.getElementById("achievement7").className ="badge unlocked";
+          if (mingos.includes(monName)) document.getElementById("achievement11").className ="badge unlocked";
         if (plants.includes(monName)) plantsOwned++;
         if (plantsOwned>=3) document.getElementById("achievement8").className ="badge unlocked";
         if (insects.includes(monName)) insectsOwned++;
@@ -867,7 +869,7 @@ function setupAlmanac(){
     
 
         <card>
-          <div class="container comingsoon" id="Lich"  >
+          <div class="container" id="Lich"  >
             <div class="preview" >
             <div class="row" >
                 <p class="rarity limited">Limited</p>
@@ -883,8 +885,8 @@ function setupAlmanac(){
                 <p class="name">Lich</p>
                 <p class="subheading">???</p>
                 <div class="entry">
-                  <p><b>Name meaning: </b> "???"</p>
-                 <p>??? </p>
+                  <p><b>Name meaning: </b> Undead</p>
+                 <p>A non-corporeal creaure that some believe to be the spirit of a deceased Sika. Lich are known to bring misfortune and despair upon those they manifest themselves to, by placing a curse that causes one to lose the ability to feel happiness.</p>
                 </div>
             </div>
         </div> </div>
@@ -968,6 +970,7 @@ function setupAlmanac(){
 <badge><img src="img/algobadge8.png" id="achievement8" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least three plant-like algomon.</span></badge>
 <badge><img src="img/algobadge9.png" id="achievement9" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least three aquatic algomon.</span></badge>
 <badge><img src="img/algobadge10.png" id="achievement10" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least three insect algomon.</span></badge>
+<badge><img src="img/algobadge11.png" id="achievement11" class="badge locked"></img><span class="badgeinfo">Awarded when you own at least three insect algomon.</span></badge>
 
            </center>
           
@@ -1207,6 +1210,15 @@ function setupAlmanac(){
   <td><unique>1 minted</unique></td>
   <td><a href="https://www.nftexplorer.app/asset/356437990">Open Market</a></td>
 </tr>
+
+<tr>
+  <td><b>4X# Lich</b></td>
+  <td>MONXLIC</td>
+  <td><a href="https://algoexplorer.io/asset/364930039">364930039</a></td>
+  <td><epic>??? minted</epic></td>
+  <td><a href="https://www.nftexplorer.app/asset/364930039">Open Market</a></td>
+</tr>
+
           </tbody>
         </table>
       </br>
